@@ -1,4 +1,7 @@
 {
+  "name": "abaco-financial-intelligence",
+  "version": "2.0.0",
+  "description": "ABACO Financial Intelligence Platform - Production Ready",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -6,6 +9,47 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
+<<<<<<< HEAD
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:agents": "jest --testPathPattern=agents",
+    "analyze:traces": "echo 'AI Toolkit trace analysis'",
+    "db:generate": "supabase gen types typescript --project-id $NEXT_PUBLIC_SUPABASE_PROJECT_ID > types/supabase.ts",
+    "db:reset": "supabase db reset",
+    "db:migrate": "supabase migration up",
+    "clean": "rm -rf .next dist coverage node_modules/.cache"
+  },
+  "dependencies": {
+    "@azure/cosmos": "^4.7.0",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.76.1",
+    "autoprefixer": "^10.4.21",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.263.1",
+    "next": "^15.0.3",
+    "next-themes": "^0.2.1",
+    "postcss": "^8.5.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^2.6.0",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.2.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.18.12",
+    "@types/react": "^18.3.26",
+    "@types/react-dom": "^18.3.7",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.6",
+    "jest": "^29.7.0",
+    "jest-environment-node": "^30.2.0",
+    "tailwindcss": "^3.4.18",
+    "ts-jest": "^29.4.5"
+=======
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "rm -rf .next out node_modules/.cache"
@@ -41,5 +85,6 @@
     "prettier": "^3.6.2",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.9.3"
+>>>>>>> a420387e78678797632369e28629f802ce050805
   }
 }

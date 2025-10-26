@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
+<<<<<<< HEAD
+    "lib": ["dom", "dom.iterable", "es2015", "es6"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+=======
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": [
@@ -9,10 +18,17 @@
     ],
     "module": "ESNext",
     "skipLibCheck": true,
+>>>>>>> a420387e78678797632369e28629f802ce050805
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+<<<<<<< HEAD
+    "jsx": "preserve",
+    "incremental": true,
+    "downlevelIteration": true,
+    "ignoreDeprecations": "6.0",
+=======
     "noEmit": true,
     "jsx": "preserve",
     "strict": true,
@@ -28,12 +44,17 @@
     "allowJs": true,
     "incremental": true,
     "esModuleInterop": true,
+>>>>>>> a420387e78678797632369e28629f802ce050805
     "plugins": [
       {
         "name": "next"
       }
     ]
   },
+<<<<<<< HEAD
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", "supabase/functions/**/*", "data/**/*"]
+=======
   "include": [
     "src",
     ".next/types/**/*.ts"
@@ -46,4 +67,5 @@
   "exclude": [
     "node_modules"
   ]
+>>>>>>> a420387e78678797632369e28629f802ce050805
 }
