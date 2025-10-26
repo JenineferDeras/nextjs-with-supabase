@@ -23,17 +23,18 @@ function App() {
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold text-white">Abaco Office Add-in</h1>
           <div className="flex gap-2">
-            {slides.map((_, index) => (
+            {slides.map((slide, index) => (
               <button
-                key={index}
+                key={slide.title}
                 onClick={() => setCurrentSlide(index)}
                 className={`px-3 py-1 rounded-md text-sm transition-all ${
                   currentSlide === index
                     ? 'bg-purple-500 text-white'
                     : 'bg-white/20 text-white/70 hover:bg-white/30'
                 }`}
+                aria-label={`Ir a la diapositiva: ${slide.title}`}
               >
-                {index + 1}
+                {slide.title}
               </button>
             ))}
           </div>
