@@ -54,7 +54,23 @@ else
     
     # Alternative: try without Turbopack
     echo "🔄 Trying build without Turbopack..."
-    npm run build -- --no-turbo || echo "❌ Alternative build also failed"
+
+    # Detect Next.js version
+    NEXT_VERSION=$(node -p "require('./package.json').dependencies['next'] || require('./package.json').devDependencies['next']")
+    # Remove ^, ~, >=, <=, etc.
+    NEXT_VERSION_CLEAN=$(echo "$NEXT_VERSION" | sed 's/[^0-9.]//g')
+    # Get major, minor, patch
+    NEXT_MAJOR=$(echo "$NEXT_VERSION_CLEAN" | cut -d. -f1)
+    NEXT_MINOR=$(echo "$NEXT_VERSION_CLEAN" | cut -d. -f2)
+    NEXT_PATCH=$(echo "$NEXT_VERSION_CLEAN" | cut -d. -f3)
+
+    # Check if Next.js version is >= 13.1.0
+    if [ "$NEXT_MAJOR" -gt 13 ] || { [ "$NEXT_MAJOR" -eq 13 ] && [ "$NEXT_MINOR" -ge 1 ]; }; then
+        npm run build -- --no-turbo || echo "❌ Alternative build also failed"
+    else
+        echo "⚠️ '--no-turbo' flag not supported in Next.js version $NEXT_VERSION. Running build without the flag."
+        npm run build || echo "❌ Alternative build also failed"
+    fi
 fi
 
 # Step 6: Test development server
